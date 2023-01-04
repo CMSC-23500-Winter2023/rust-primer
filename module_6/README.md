@@ -2,7 +2,7 @@
 
 The goal of this last module 6 of the warm up is a
 [walkthrough](https://en.wikipedia.org/wiki/Software_walkthrough) CrustyDB's
-codebase. First, this module gives you some direction on how to go about
+codebase; you can find it [here](https://github.com/CMSC-23500-Winter2023/crustydb-23). First, this module gives you some direction on how to go about
 exploring the codebase. It asks some questions (Guiding Questions, below) to
 test your knowledge as you make progress. These questions are just for you, you
 do not need to submit module 6 to gradescope and you do not need to run any
