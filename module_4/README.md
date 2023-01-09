@@ -130,7 +130,7 @@ fn main()
 } 
 ```
 
-We are creating 11 threads in the example above. Each thread has a reference to the vector primes. Because we have multiple references, we tell Rust to reference count them. Because these references are shared across different threads, we use Arc to indicate that. 
+We are creating 10 threads in the example above. Each thread has a reference to the vector primes. Because we have multiple references, we tell Rust to reference count them. Because these references are shared across different threads, we use Arc to indicate that. 
 
 In addition, we want only 1 thread accessing the data at a time. To achieve that, we create a Mutex on the primes variable.
 

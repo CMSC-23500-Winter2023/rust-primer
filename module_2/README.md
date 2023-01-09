@@ -328,7 +328,7 @@ Therefore when dealing with a message enum/variable you know it *must* be one of
 ```rust
 let m1 = Message::Hello;
 let m2 = Message::Body(String::from("Meet me at Medici"));
-let m3 = Message::Wait(String::from("Seconds",10);
+let m3 = Message::Wait(String::from("Seconds"), 10);
 let m4 = Message::Goodbye;
 ```
 
