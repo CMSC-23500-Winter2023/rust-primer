@@ -51,7 +51,7 @@ Tweet are two different types, they both implement the Summary behavior. In addi
 Similar to C, C++ and Java, Rust provides the ability to write multi-threaded programs which allows for concurrent execution of program code, and threads have the ability to read and write shared data, as we shall see soon. 
 
 Threading in rust is handled via the `std::thread` library, which provides the 
-ability to `spawn` threads. The thread `thread::spawn` function call takes in a function `closure`, which can is an anonmyous function that can be saved in a variable or passed to other functions, along with associated context. The following example spawns a single thread which prints 10 lines, while the main thread prints 5 lines, and these can run concurrently. The closure is defined line a function in-place using the `|| {}` notation. 
+ability to `spawn` threads. The thread `thread::spawn` function call takes in a function `closure`, which is an anonmyous function with associated context that can be saved in a variable and passed to other functions. The following example spawns a single thread which prints 10 lines, while the main thread prints 5 lines, and these can run concurrently. The closure is defined as a parameter to `thread::spwan` using the `|| {}` notation. 
 
 ```rust
 use std::thread;
@@ -79,7 +79,7 @@ fn main() {
 
 The example also shows the use of `thread:sleep` to force a thread to stop its execution for sometime. 
 
-A call to the `thread::spawn` function returns a variable of type `JoinHandle`. This variable gives us a handle to the thread which we can use to interact with the thread and call the thread `join()` function wbich forces the calling thread to wait for the execution of the thread pointed to by the handle to finish executing. In rust, when the main thread is done executing, the program exits, irrespective of any threads that have not finished executing, unless you force the execution to wait until all spawned threads have been joined. 
+A call to the `thread::spawn` function returns a variable of type `JoinHandle`. This variable gives us a handle to the thread which we can use to interact with the thread and call the thread `join()` function. `join` forces the calling thread to wait for the execution of the thread pointed to by the handle to finish executing. In rust, when the main thread is done executing, the program exits, irrespective of any threads that have not finished executing, unless you force the execution to wait until all spawned threads have been joined using `join`. 
 
 [Read more about Threads in the Rust book](https://doc.rust-lang.org/book/ch16-01-threads.html)
 
@@ -159,7 +159,7 @@ fn main() {
 }
 ```
 
-The example contains a spawned thread which accesses a vector `v` inside the thread. Note that we have used the keyword `move` along with the function closure to indicate to the rust compiler to automatically take ownership any used values from the outer context. Once a value has been owned by the thread, it can no longer be used in the calling context (i.e. the main thread)
+The example contains a spawned thread which accesses a vector `v` inside the thread. Note that we have used the keyword `move` along with the function closure to indicate to the rust compiler to automatically take ownership any used values from the outer context. Once a value has been owned by the thread, it can no longer be used in the calling context (i.e. the main thread). However, we can use specialized primitives to share and protect access to data across threads, as will be demonstrated next. 
 
 [Read more about move closures in the Rust book](https://doc.rust-lang.org/book/ch16-01-threads.html#using-move-closures-with-threads)
 
