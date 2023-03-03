@@ -299,7 +299,7 @@ debugging on Windows, but it has not been tested by us.
 
 We have had some mixed success with using VSCode for debugging Rust
 (although it is a great Rust IDE with the right extensions).  Using the
-extensions Rust and CodeLLDB on Ubuntu has gotten debugging working on a set up.
+extensions `rust-analyzer` and CodeLLDB on Ubuntu has gotten debugging working on a set up.
 We included the launch.json for running tests in a package.
 
 ### Alternative ways of debugging programs
